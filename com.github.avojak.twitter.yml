@@ -1,0 +1,29 @@
+app-id: com.github.avojak.twitter
+
+runtime: io.elementary.Platform
+runtime-version: '6.1'
+sdk: io.elementary.Sdk
+
+command: com.github.avojak.twitter
+
+finish-args:
+  - '--device=dri' # OpenGL
+  - '--share=ipc'
+  - '--share=network' # Because they're web apps
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+  - '--socket=pulseaudio' # Audio from the web app
+  - '--filesystem=host' # Persistent cookie storage
+
+modules:
+  - name: libdazzle
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/libdazzle.git
+        tag: '3.36.0'
+  - name: twitter
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .

@@ -1,0 +1,31 @@
+[Desktop Entry]
+Name=@name@
+GenericName=Twitter
+Comment=Get breaking news, politics, trending music, world events, sports scores, and the latest global news stories as they unfold - all with less data.
+Categories=Network;
+Exec=@binary@
+Icon=@icon@
+Terminal=false
+Type=Application
+Keywords=Social;News;Magazine;
+Actions=NewTweet;Explore;Notifications;DirectMessages;
+
+[Desktop Action NewTweet]
+Name=New Tweet
+Icon=@icon@-compose
+Exec=@binary@ "/compose/tweet?utm_source=jumplist&utm_medium=shortcut"
+
+[Desktop Action Explore]
+Name=Explore
+Icon=@icon@-explore
+Exec=@binary@ "/explore?utm_source=jumplist&utm_medium=shortcut"
+
+[Desktop Action Notifications]
+Name=Notifications
+Icon=@icon@-notifications
+Exec=@binary@ "/notifications?utm_source=jumplist&utm_medium=shortcut"
+
+[Desktop Action DirectMessages]
+Name=Direct Messages
+Icon=@icon@-messages
+Exec=@binary@ "/messages?utm_source=jumplist&utm_medium=shortcut"
